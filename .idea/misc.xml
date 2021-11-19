@@ -3,9 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1671875" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/drawable/gradiant_background.xml" value="0.1671875" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/drawable/ic_baseline_drive_eta_24.xml" value="0.15885416666666666" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1671875" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/activity_inicio.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/activity_user.xml" value="0.21693840579710144" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/content_main.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/drawer_header.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/drawer_toolbar.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/fragment_todas.xml" value="0.5" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/list_rutas.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/login_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/menu_main.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/recycle_rutas.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/registre_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/menu/drawer_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/activity_inicio.xml" value="0.2" />
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/activity_user.xml" value="0.25" />
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/fragment_cercanas.xml" value="0.1793478260869565" />

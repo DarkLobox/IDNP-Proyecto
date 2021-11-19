@@ -1,0 +1,4 @@
+package com.example.idnp_proyecto.Presenter;
+
+public class LoginPresenter {
+}

@@ -7,15 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-public class DbCalendario extends DbHelper{
+public class DbEventos extends DbHelper {
     Context context;
 
-    public DbCalendario(@Nullable Context context) {
+    public DbEventos(@Nullable Context context) {
         super(context);
         this.context = context;
     }
 
-    public long insertarCalendario(String usuario_id, String comentario, String fecha, String hora){
+    public long insertarEvento(String usuario_id, String comentario, String fecha, String hora){
         long id = 0;
         try{
             DbHelper dbHelper = new DbHelper(context);
@@ -26,7 +26,7 @@ public class DbCalendario extends DbHelper{
             values.put("comentario",comentario);
             values.put("fecha", fecha);
             values.put("hora",hora);
-            id = db.insert(TABLE_CALENDARIO, null, values);
+            id = db.insert(TABLE_EVENTOS, null, values);
 
         }catch (Exception e){
             e.toString();
@@ -34,7 +34,7 @@ public class DbCalendario extends DbHelper{
         return id;
     }
 
-    public boolean actualizarCalendario(String id, String usuario_id, String comentario, String fecha, String hora){
+    public boolean actualizarEvento(String id, String usuario_id, String comentario, String fecha, String hora){
         try{
             DbHelper dbHelper = new DbHelper(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -45,7 +45,7 @@ public class DbCalendario extends DbHelper{
             values.put("fecha",fecha);
             values.put("hora",hora);
             String[] args = new String []{id};
-            db.update(TABLE_CALENDARIO, values, "id=?", args);
+            db.update(TABLE_EVENTOS, values, "id=?", args);
             return true;
         }catch (Exception e){
             e.toString();
@@ -53,13 +53,13 @@ public class DbCalendario extends DbHelper{
         return false;
     }
 
-    public boolean eliminarCalendario(String id){
+    public boolean eliminarEvento(String id){
         try{
-            DbHelper dbHelper = new DbHelper(context);
+           DbHelper dbHelper = new DbHelper(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
             String[] args = new String []{id};
-            db.delete(TABLE_CALENDARIO, "id=?", args);
+            db.delete(TABLE_EVENTOS, "id=?", args);
             return true;
         }catch (Exception e){
             e.toString();
@@ -73,9 +73,10 @@ public class DbCalendario extends DbHelper{
         return db.rawQuery("SELECT id FROM t_calendario",null);
     }
 
-    public Cursor obtenerCalendario(String id){
+    public Cursor obtenerEvento(String id){
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         return db.rawQuery("SELECT * FROM t_calendario WHERE id = " + id,null);
     }
 }
+

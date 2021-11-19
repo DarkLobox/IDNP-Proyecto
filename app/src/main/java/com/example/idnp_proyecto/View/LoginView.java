@@ -1,4 +1,4 @@
-package com.example.idnp_proyecto;
+package com.example.idnp_proyecto.View;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentLogin extends Fragment {
+import com.example.idnp_proyecto.Interface.CallbackFragment;
+import com.example.idnp_proyecto.R;
+
+public class LoginView extends Fragment {
 
     Button buttonLog,buttonReg;
     EditText etCorreo,etPass;
@@ -47,12 +50,12 @@ public class FragmentLogin extends Fragment {
                 correo=etCorreo.getText().toString();
                 pass=etPass.getText().toString();
                 String uCorreo,uPass;
-                uCorreo = sharedPreferences.getString("nombre",null);
+                uCorreo = sharedPreferences.getString("correo",null);
                 uPass = sharedPreferences.getString("pass", null);
 
                 if(correo.equals(uCorreo) && pass.equals(uPass)){
                     Toast.makeText(getContext(),"ingreso", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(),InicioActivity.class);
+                    Intent intent = new Intent(getActivity(), InicioView.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getContext(),"datos Erroneos", Toast.LENGTH_SHORT).show();

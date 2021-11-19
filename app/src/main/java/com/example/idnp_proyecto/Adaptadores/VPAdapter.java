@@ -1,4 +1,4 @@
-package com.example.idnp_proyecto;
+package com.example.idnp_proyecto.Adaptadores;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

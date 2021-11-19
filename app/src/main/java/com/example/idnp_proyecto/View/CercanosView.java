@@ -1,4 +1,4 @@
-package com.example.idnp_proyecto;
+package com.example.idnp_proyecto.View;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentFavoritas extends Fragment {
+import com.example.idnp_proyecto.R;
+
+public class CercanosView extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favoritas, container, false);
+        return inflater.inflate(R.layout.cercanos_fragment, container, false);
     }
 }

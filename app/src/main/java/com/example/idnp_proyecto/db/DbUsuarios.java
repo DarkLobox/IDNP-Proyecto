@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-public class DbUsuarios extends DbHelper{
+public class DbUsuarios extends DbHelper {
     Context context;
 
     public DbUsuarios(@Nullable Context context) {

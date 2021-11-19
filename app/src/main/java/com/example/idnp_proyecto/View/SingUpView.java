@@ -1,4 +1,4 @@
-package com.example.idnp_proyecto;
+package com.example.idnp_proyecto.View;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,7 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentRegistre extends Fragment {
+import com.example.idnp_proyecto.R;
+
+public class SingUpView extends Fragment {
 
     Button buttonReg;
     EditText regName,regCorreo,regCelular,regPass,verPass;
@@ -29,7 +31,7 @@ public class FragmentRegistre extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.registre_fragment,container,false);
+        View view = inflater.inflate(R.layout.sing_up_fragment,container,false);
         buttonReg = view.findViewById(R.id.registre);
         regName = view.findViewById(R.id.registrarNombre);
         regCorreo = view.findViewById(R.id.registrarCorreo);

@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IDNPProyecto">
         <activity
-            android:name=".InicioActivity"
+            android:name=".View.DescriptionActivity"
             android:exported="true" />
         <activity
-            android:name=".UserActivity"
+            android:name=".View.InicioView"
+            android:exported="true" />
+        <activity
+            android:name=".View.UsuarioView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

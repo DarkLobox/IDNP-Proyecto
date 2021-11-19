@@ -1,15 +1,16 @@
-package com.example.idnp_proyecto;
+package com.example.idnp_proyecto.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
 
+import com.example.idnp_proyecto.R;
+import com.example.idnp_proyecto.Adaptadores.VPAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class InicioActivity extends AppCompatActivity {
+public class InicioView extends AppCompatActivity {
 
     private TabLayout tabMenu;
     private ViewPager viewPager;
@@ -25,9 +26,9 @@ public class InicioActivity extends AppCompatActivity {
         tabMenu.setupWithViewPager(viewPager);
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new FragmentTodas(), "TODAS");
-        vpAdapter.addFragment(new FragmentFavoritas(), "FAVORITAS");
-        vpAdapter.addFragment(new FragmentCercanas(), "CERCANAS");
+        vpAdapter.addFragment(new RutasView(), "TODAS");
+        vpAdapter.addFragment(new FavoritosView(), "FAVORITAS");
+        vpAdapter.addFragment(new CercanosView(), "CERCANAS");
         viewPager.setAdapter(vpAdapter);
     }
 }
