@@ -7,10 +7,17 @@
     tools:context=".UserActivity">
 
     <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragmentContainer">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-66dp">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiant_background">
     <EditText
         android:id="@+id/registrarNombre"
         android:layout_width="wrap_content"
@@ -12,7 +13,7 @@
         android:layout_marginTop="108dp"
         android:ems="10"
         android:hint="Usuario"
-
+        android:textColorHint="@color/white"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -25,9 +26,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="example@gmail.com"
+        android:textColorHint="@color/white"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/registrarNombre"
-        tools:layout_editor_absoluteX="100dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarNombre" />
 
     <EditText
         android:id="@+id/registrarCelular"
@@ -35,9 +38,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="celular# 999-999-999"
+        android:textColorHint="@color/white"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/registrarCorreo"
-        tools:layout_editor_absoluteX="111dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarCorreo" />
 
     <EditText
         android:id="@+id/registrarPassword"
@@ -45,9 +50,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Contraseña"
+        android:textColorHint="@color/white"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/registrarCelular"
-        tools:layout_editor_absoluteX="111dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarCelular" />
 
     <EditText
         android:id="@+id/verificarPassword"
@@ -55,15 +62,32 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Verificar Contraseña"
+        android:textColorHint="@color/white"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/registrarPassword"
-        tools:layout_editor_absoluteX="111dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrarPassword" />
 
     <Button
         android:id="@+id/registre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="Registro"
+        android:background="@drawable/bordes_redondos"
+        android:textColor="#E8E3E3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verificarPassword" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="401dp"
+        android:layout_height="359dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verificarPassword"
-        tools:layout_editor_absoluteX="145dp" />
+        app:srcCompat="@drawable/bus" />
 </androidx.constraintlayout.widget.ConstraintLayout>
