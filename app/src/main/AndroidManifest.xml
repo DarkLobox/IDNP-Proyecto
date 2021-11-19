@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IDNPProyecto">
         <activity
+            android:name=".InicioActivity"
+            android:exported="true" />
+        <activity
             android:name=".UserActivity"
             android:exported="true">
             <intent-filter>

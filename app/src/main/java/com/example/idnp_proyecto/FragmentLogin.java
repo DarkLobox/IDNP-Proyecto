@@ -1,6 +1,7 @@
 package com.example.idnp_proyecto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -46,11 +47,13 @@ public class FragmentLogin extends Fragment {
                 correo=etCorreo.getText().toString();
                 pass=etPass.getText().toString();
                 String uCorreo,uPass;
-                uCorreo = sharedPreferences.getString("correo",null);
+                uCorreo = sharedPreferences.getString("nombre",null);
                 uPass = sharedPreferences.getString("pass", null);
 
                 if(correo.equals(uCorreo) && pass.equals(uPass)){
                     Toast.makeText(getContext(),"ingreso", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(),InicioActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(getContext(),"datos Erroneos", Toast.LENGTH_SHORT).show();
                 }
