@@ -16,6 +16,7 @@
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/fragment_todas.xml" value="0.5" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/list_rutas.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/login_fragment.xml" value="0.25" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/menu_main.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/recycle_rutas.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/registre_fragment.xml" value="0.22" />
@@ -28,6 +29,9 @@
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/login_fragment.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/registre_fragment.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DarkLobox/AndroidStudioProjects/IDNPProyecto/app/src/main/res/layout/todas_fragment.xml" value="0.1793478260869565" />
+=======
+        <entry key="..\:/Users/Dante/Documents/GitHub/IDNP-Proyecto/app/src/main/res/layout/registre_fragment.xml" value="0.1" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>
