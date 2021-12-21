@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">IDNP-Proyecto</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="textEmail">Correo</string>
+    <string name="textPassword">Contraseña</string>
+    <string name="textEnter">Ingresar</string>
+    <string name="textRegister">Registrarte</string>
+    <string name="textUser">Usuario</string>
+    <string name="textExampleEmail">example@gmail.com</string>
+    <string name="textExampleNumber">Celular# 999-999-999</string>
+    <string name="textVerifiedPassword">Verificar Contraseña</string>
+    <string name="textRegistry">Registro</string>
+    <string name="textAll">Todas</string>
+    <string name="textFavorites">Favoritas</string>
+    <string name="textNear">Cercanas</string>
 </resources>

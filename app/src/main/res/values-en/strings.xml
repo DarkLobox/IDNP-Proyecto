@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IDNP-Project</string>
+
+    <string name="textEmail">Email</string>
+    <string name="textPassword">Password</string>
+    <string name="textEnter">Enter</string>
+    <string name="textRegister">Sing Up</string>
+    <string name="textUser">User</string>
+    <string name="textExampleEmail">example@gmail.com</string>
+    <string name="textExampleNumber">Cellnumber# 999-999-999</string>
+    <string name="textVerifiedPassword">Verify Password</string>
+    <string name="textRegistry">Registration</string>
+    <string name="textAll">All</string>
+    <string name="textFavorites">Favorites</string>
+    <string name="textNear">Nearby</string>
+</resources>

@@ -26,9 +26,10 @@ public class InicioView extends AppCompatActivity {
         tabMenu.setupWithViewPager(viewPager);
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new RutasView(), "TODAS");
-        vpAdapter.addFragment(new FavoritosView(), "FAVORITAS");
-        vpAdapter.addFragment(new CercanosView(), "CERCANAS");
+        vpAdapter.addFragment(new RutasView(), getResources().getString(R.string.textAll));
+        vpAdapter.addFragment(new FavoritosView(), getResources().getString(R.string.textFavorites));
+        vpAdapter.addFragment(new CercanosView(), getResources().getString(R.string.textNear));
         viewPager.setAdapter(vpAdapter);
     }
+
 }
