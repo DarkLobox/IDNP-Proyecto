@@ -1,5 +1,7 @@
 package com.example.idnp_proyecto.View;
 
+import android.app.ActionBar;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,7 @@ public class CercanosView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.cercanos_fragment, container, false);
     }
 }

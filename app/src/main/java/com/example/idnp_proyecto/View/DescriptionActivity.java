@@ -2,6 +2,8 @@ package com.example.idnp_proyecto.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -24,7 +26,9 @@ public class DescriptionActivity extends AppCompatActivity {
 
         titleDescriptionTextView.setText(element.getEmpresa());
 
+
         rutaDescriptionTextview.setText(element.getLetraRuta());
+
 
         statusDescriptionTextview.setText(element.getHorario());
 
