@@ -8,6 +8,19 @@
     android:background="@drawable/gradiant_background"
     tools:context=".View.UsuarioView">
 
+    <Button
+        android:id="@+id/invButton"
+        android:layout_width="110dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bordes_redondos"
+        android:text="INVITADO"
+        android:textColor="#E8E3E3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regButton" />
+
     <EditText
         android:id="@+id/logName"
         android:layout_width="wrap_content"
@@ -42,7 +55,7 @@
         android:id="@+id/logButton"
         android:layout_width="115dp"
         android:layout_height="42dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bordes_redondos"
         android:text="@string/textEnter"
         android:textColor="#E8E3E3"
@@ -55,7 +68,7 @@
         android:id="@+id/regButton"
         android:layout_width="110dp"
         android:layout_height="43dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bordes_redondos"
         android:text="@string/textRegister"
         android:textColor="#E8E3E3"
@@ -84,7 +97,7 @@
         android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logPass"
         app:layout_constraintVertical_bias="1.0"

@@ -28,13 +28,13 @@ import com.example.idnp_proyecto.R;
 
 public class LoginView extends Fragment implements Login {
 
-    Button buttonLog,buttonReg;
+    Button buttonLog,buttonReg,buttonInv;
     EditText etCorreo,etPass;
     CallbackFragment callbackFragment;
     String correo,pass;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-
+    boolean invitado;
     @Override
     public void onAttach(@NonNull Context context) {
         sharedPreferences = context.getSharedPreferences("userFile",Context.MODE_PRIVATE);
@@ -51,13 +51,19 @@ public class LoginView extends Fragment implements Login {
         LoginPresenter presenter = new LoginPresenter();
         buttonLog = view.findViewById(R.id.logButton);
         buttonReg = view.findViewById(R.id.regButton);
+        buttonInv = view.findViewById(R.id.invButton);
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 validar(v);
+            }
+        });
 
+        buttonInv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                invitado = true;
+                navigationHome();
             }
         });
 
@@ -109,6 +115,7 @@ public class LoginView extends Fragment implements Login {
     public void navigationHome() {
         Toast.makeText(getContext(),"ingreso", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), InicioView.class);
+        intent.putExtra("Invitado",invitado);
         startActivity(intent);
     }
     public void validar(View v){
@@ -120,6 +127,7 @@ public class LoginView extends Fragment implements Login {
         uPass = sharedPreferences.getString("pass", null);
 
         if((correo.equals(uCorreo) && pass.equals(uPass)) || true){
+            invitado = false;
             navigationHome();
         }else{
             Toast.makeText(getContext(),"datos Erroneos", Toast.LENGTH_SHORT).show();

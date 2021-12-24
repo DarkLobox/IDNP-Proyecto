@@ -33,9 +33,15 @@ public class InicioView extends BaseActivity<InicioPresenter> implements Inicio 
 
         tabMenu.setupWithViewPager(viewPager);
 
+        //Recupera el bool invitado
+        boolean invitado = getIntent().getBooleanExtra("Invitado", true);
+
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         vpAdapter.addFragment(new RutasView(), getResources().getString(R.string.textAll));
-        vpAdapter.addFragment(new FavoritosView(), getResources().getString(R.string.textFavorites));
+        //Quita la opcion de Favoritos al invitado
+        if(!invitado){
+            vpAdapter.addFragment(new FavoritosView(), getResources().getString(R.string.textFavorites));
+        }
         vpAdapter.addFragment(new CercanosView(), getResources().getString(R.string.textNear));
         vpAdapter.addFragment(new CalendarioView(),getResources().getString(R.string.botonCalendar));
         viewPager.setAdapter(vpAdapter);

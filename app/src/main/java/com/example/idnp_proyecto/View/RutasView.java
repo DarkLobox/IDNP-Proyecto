@@ -37,6 +37,10 @@ public class RutasView extends Fragment {
         rutas.add(new Ruta("7 de Octubre", "B", "5:00 AM - 9:00 PM"));
         rutas.add(new Ruta("8 de Octubre", "D", "5:00 AM - 9:00 PM"));
 
+        //Recupera el valor de InicioView para verificar invitado
+        boolean invitado = getActivity().getIntent().getBooleanExtra("Invitado", true);
+
+
         ListAdapter listAdapter;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             listAdapter = new ListAdapter(rutas, getContext(), new ListAdapter.OnItemClickListener() {
@@ -53,6 +57,7 @@ public class RutasView extends Fragment {
                 }
             });
         }
+
         recyclerView.setAdapter(listAdapter);
 
         return rootView;
