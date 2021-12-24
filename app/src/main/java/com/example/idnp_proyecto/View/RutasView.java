@@ -14,12 +14,17 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.idnp_proyecto.R;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RutasView extends Fragment {
     List<Ruta> rutas;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,6 +34,10 @@ public class RutasView extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerRutas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        FirebaseApp.initializeApp(getContext());
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
         rutas = new ArrayList<Ruta>();
         rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM"));
         rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM"));
@@ -36,6 +45,8 @@ public class RutasView extends Fragment {
         rutas.add(new Ruta("6 de Octubre", "A", "5:00 AM - 9:00 PM"));
         rutas.add(new Ruta("7 de Octubre", "B", "5:00 AM - 9:00 PM"));
         rutas.add(new Ruta("8 de Octubre", "D", "5:00 AM - 9:00 PM"));
+
+        databaseReference.child("Ruta").setValue(rutas);
 
         //Recupera el valor de InicioView para verificar invitado
         boolean invitado = getActivity().getIntent().getBooleanExtra("Invitado", true);
