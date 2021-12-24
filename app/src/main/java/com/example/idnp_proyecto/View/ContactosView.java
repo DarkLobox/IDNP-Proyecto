@@ -39,8 +39,15 @@ public class ContactosView extends Fragment {
         contactos.add(new Contacto("Patricio Dante", "pdantet@unsa.edu.pe", "975216544"));
         contactos.add(new Contacto("Johnnathan J.", "jramosb@unsa.edu.pe", "959842125"));
 
+       ContactAdapter listAdapter=new ContactAdapter(contactos, getContext());
+
+        recyclerView.setAdapter(listAdapter);
 
         return rootView;
     }
-
+    public  void moveToDescription(Contacto item){
+        Intent intent = new Intent(getContext(), UsuarioView.class);
+        intent.putExtra("Contacto",item);
+        startActivity(intent);
+    }
 }
