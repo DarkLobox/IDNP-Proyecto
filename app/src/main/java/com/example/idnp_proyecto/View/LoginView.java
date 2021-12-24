@@ -25,6 +25,12 @@ import com.example.idnp_proyecto.Model.LoginModel;
 import com.example.idnp_proyecto.Presenter.InicioPresenter;
 import com.example.idnp_proyecto.Presenter.LoginPresenter;
 import com.example.idnp_proyecto.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginView extends Fragment implements Login {
 
@@ -34,7 +40,11 @@ public class LoginView extends Fragment implements Login {
     String correo,pass;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    boolean invitado;
+    String uCorreo,uPass;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    boolean invitado, ingresar;
     @Override
     public void onAttach(@NonNull Context context) {
         sharedPreferences = context.getSharedPreferences("userFile",Context.MODE_PRIVATE);
@@ -122,11 +132,33 @@ public class LoginView extends Fragment implements Login {
 
         correo=etCorreo.getText().toString();
         pass=etPass.getText().toString();
-        String uCorreo,uPass;
+
         uCorreo = sharedPreferences.getString("correo",null);
         uPass = sharedPreferences.getString("pass", null);
+        ingresar=false;
 
-        if((correo.equals(uCorreo) && pass.equals(uPass)) || true){
+        FirebaseApp.initializeApp(getContext());
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Usuario");
+        databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+
+                int i=1;
+                while(i<=Usuario.cantidad){
+                    uCorreo= task.getResult().child(i+"/correo").getValue().toString();
+                    uPass= task.getResult().child(i+"/password").getValue().toString();
+                    if(correo.equals(uCorreo) && pass.equals(uPass)){
+                        ingresar=true;
+                        break;
+                    }
+                    i++;
+                }
+
+            }
+        });
+
+        if(correo.equals(uCorreo) && pass.equals(uPass) ){
             invitado = false;
             navigationHome();
         }else{
