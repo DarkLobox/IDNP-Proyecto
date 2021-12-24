@@ -45,6 +45,7 @@ public class LoginView extends Fragment implements Login {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     boolean invitado = true, ingresar = false;
+
     @Override
     public void onAttach(@NonNull Context context) {
         sharedPreferences = context.getSharedPreferences("userFile",Context.MODE_PRIVATE);
@@ -56,8 +57,10 @@ public class LoginView extends Fragment implements Login {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment,container,false);
+
         etCorreo = view.findViewById(R.id.logName);
         etPass = view.findViewById(R.id.logPass);
+
         LoginPresenter presenter = new LoginPresenter();
         buttonLog = view.findViewById(R.id.logButton);
         buttonReg = view.findViewById(R.id.regButton);
@@ -85,6 +88,10 @@ public class LoginView extends Fragment implements Login {
                 }
             }
         });
+
+        etCorreo.setText(sharedPreferences.getString("correo",""));
+        etPass.setText(sharedPreferences.getString("pass", ""));
+
         return view;
     }
     public void setCallbackFragment(CallbackFragment callbackFragment){
@@ -158,6 +165,8 @@ public class LoginView extends Fragment implements Login {
 
         if(correo.equals(uCorreo) && pass.equals(uPass) ){
             invitado = false;
+            editor.putString("correo",etCorreo.getText().toString());
+            editor.putString("pass",etPass.getText().toString());
             navigationHome();
         }else{
             Toast.makeText(getContext(),"datos Erroneos", Toast.LENGTH_SHORT).show();
