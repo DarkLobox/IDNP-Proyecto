@@ -25,6 +25,7 @@ public class SingUpView extends Fragment {
     EditText regName,regCorreo,regCelular,regPass,verPass;
     String nombre,correo,celular,pass,verifi;
     SharedPreferences.Editor editor;
+
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
