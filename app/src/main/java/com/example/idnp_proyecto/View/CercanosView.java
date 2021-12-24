@@ -1,23 +1,14 @@
 package com.example.idnp_proyecto.View;
 
-import android.Manifest;
-import android.app.ActionBar;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.os.Build;
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.idnp_proyecto.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -31,32 +22,43 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.model.RoundCap;
 
 public class CercanosView extends Fragment {
-    private GoogleMap map;
-    public static final int REQUEST_CODE_LOCATION = 0;
 
+    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+
+        @Override
+        public void onMapReady(GoogleMap googleMap) {
+
+            createMarker(googleMap);
+            createPolylines(googleMap);
+        }
+    };
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.cercanos_fragment, container, false);
-        //createFragment();
-        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
-
-        mapFragment.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                map = googleMap;
-                createMarker();
-                createPolylines();
-                enableLocation();
-            }
-        });
-
-        requestLocationPermission();
-
-        return view;
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.cercanos_fragment, container, false);
     }
 
-    private final void createPolylines() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(callback);
+        }
+    }
+    private final void createMarker(GoogleMap googleMap) {
+        LatLng coordinates = new LatLng(-16.422089710019176D, -71.54356956481934D);
+        MarkerOptions marker = (new MarkerOptions()).position(coordinates).title("Ruta 01");
+        googleMap.addMarker(marker);
+        googleMap.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates, 15.0F), 2000, null);
+    }
+
+    private final void createPolylines(GoogleMap googleMap) {
         PolylineOptions ruta01 = (new PolylineOptions())
                 .add(new LatLng(-16.422089710019176D, -71.54356956481934D))
                 .add(new LatLng(-16.41937282645092D, -71.53696060180664D))
@@ -71,53 +73,10 @@ public class CercanosView extends Fragment {
                 .color(Color.parseColor("#cc1010"))
                 .width(20.0F);
 
-        Polyline polyline = map.addPolyline(ruta01);
+        Polyline polyline = googleMap.addPolyline(ruta01);
 
         polyline.setStartCap(new RoundCap());
         polyline.setEndCap(new RoundCap());
     }
 
-    private final void createMarker() {
-        LatLng coordinates = new LatLng(-16.422089710019176D, -71.54356956481934D);
-        MarkerOptions marker = (new MarkerOptions()).position(coordinates).title("Ruta 01");
-        map.addMarker(marker);
-        map.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(coordinates, 15.0F), 2000, null);
-    }
-
-    private final void enableLocation() {
-        if (map != null) {
-            if (isLocationPermissionGranted()) {
-                map.setMyLocationEnabled(true);
-            }
-
-        }
-    }
-
-    private final boolean isLocationPermissionGranted() {
-        return ContextCompat.checkSelfPermission(getContext(),
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-    }
-
-
-    private final void requestLocationPermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)) {
-            Toast.makeText(getContext(), "Acepta los permisos en configuracion", Toast.LENGTH_SHORT).show();
-        } else {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_LOCATION);
-        }
-    }
-
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch(requestCode) {
-            case 0:
-                if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    map.setMyLocationEnabled(true);
-                } else {
-                    Toast.makeText(getContext(), "Acepta los permisos en configuracion", Toast.LENGTH_SHORT).show();
-                }
-            default:
-        }
-    }
 }
