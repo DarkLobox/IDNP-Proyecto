@@ -31,11 +31,11 @@ public class RutasView extends Fragment {
 
         rutas = new ArrayList<Ruta>();
         rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("3 de Octubre", "B", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("3 de Octubre", "D", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("3 de Octubre", "B", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("3 de Octubre", "D", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("5 de Octubre", "D", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("6 de Octubre", "A", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("7 de Octubre", "B", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("8 de Octubre", "D", "5:00 AM - 9:00 PM"));
 
         ListAdapter listAdapter;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

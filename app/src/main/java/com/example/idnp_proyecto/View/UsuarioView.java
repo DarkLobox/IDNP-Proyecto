@@ -12,7 +12,7 @@ import com.example.idnp_proyecto.Interface.Usuario;
 import com.example.idnp_proyecto.Presenter.UsuarioPresenter;
 import com.example.idnp_proyecto.R;
 
-public class UsuarioView extends AppCompatActivity implements CallbackFragment, Usuario.View {
+public class UsuarioView extends AppCompatActivity implements CallbackFragment, Usuario.View{
 
     Fragment fragment;
     FragmentManager fragmentManager;
