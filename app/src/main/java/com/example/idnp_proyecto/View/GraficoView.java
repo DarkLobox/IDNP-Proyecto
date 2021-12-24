@@ -22,18 +22,14 @@ public class GraficoView extends Fragment {
         rootview = inflater.inflate(R.layout.grafico_fragment, container, false);
 
         List<String> horizontal = new ArrayList<String>();
-        horizontal.add("Peru");
-        horizontal.add("Argentina");
-        horizontal.add("Brasil");
-        horizontal.add("EEUU");
-        horizontal.add("Japon");
+        horizontal.add("Usuarios");
+        horizontal.add("Rutas");
+        horizontal.add("Favoritos");
 
         List<Integer> vertical = new ArrayList<Integer>();
         vertical.add(60);
         vertical.add(20);
         vertical.add(65);
-        vertical.add(40);
-        vertical.add(90);
 
         ViewBarChart grafico = rootview.findViewById(R.id.grafico);
         grafico.setDatos(horizontal,vertical);
