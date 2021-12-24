@@ -43,9 +43,9 @@ public class InicioView extends BaseActivity<InicioPresenter> implements Inicio 
             vpAdapter.addFragment(new FavoritosView(), getResources().getString(R.string.textFavorites));
         }
         vpAdapter.addFragment(new CercanosView(), getResources().getString(R.string.textNear));
+        vpAdapter.addFragment(new GraficoView(), "Grafico");
         vpAdapter.addFragment(new CalendarioView(),getResources().getString(R.string.botonCalendar));
         viewPager.setAdapter(vpAdapter);
-
 
     }
 

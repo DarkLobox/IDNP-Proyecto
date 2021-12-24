@@ -19,10 +19,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     private List<Ruta> mRutas;
     private LayoutInflater mInflater;
     private Context context;
+    private boolean invitado;
     final ListAdapter.OnItemClickListener listener;
 
     public  interface OnItemClickListener{
         void onItemClick(Ruta item);
+    }
+
+    public ListAdapter(List<Ruta> itemList, Context context,ListAdapter.OnItemClickListener listener, boolean invitado){
+        this.mInflater = LayoutInflater.from(context);
+        this.context = context;
+        this.mRutas = itemList;
+        this.listener = listener;
+        this.invitado = invitado;
     }
 
     public ListAdapter(List<Ruta> itemList, Context context,ListAdapter.OnItemClickListener listener){
@@ -31,6 +40,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
         this.mRutas = itemList;
         this.listener = listener;
     }
+
 
     @Override
     public int getItemCount(){
@@ -76,6 +86,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                     listener.onItemClick(item);
                 }
             });
+
             favorito.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
@@ -83,6 +94,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                     Toast.makeText(view.getContext(), item.getEmpresa(), Toast.LENGTH_SHORT).show();
                 }
             });
+
+            if(invitado){
+                favorito.setEnabled(false);
+            }
         }
     }
 }
