@@ -1,28 +1,20 @@
 package com.example.idnp_proyecto.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import com.example.idnp_proyecto.Base.BaseActivity;
-import com.example.idnp_proyecto.Interface.Inicio;
-import com.example.idnp_proyecto.Model.InicioModel;
-import com.example.idnp_proyecto.Presenter.InicioPresenter;
 import com.example.idnp_proyecto.R;
 import com.example.idnp_proyecto.Adaptadores.VPAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class InicioView extends BaseActivity<InicioPresenter> implements Inicio {
+public class InicioView extends AppCompatActivity {
 
     private TabLayout tabMenu;
     private ViewPager viewPager;
-    protected  InicioPresenter createPresenter(@NonNull Context context){
-        return new InicioPresenter(this,new InicioModel());
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,33 +32,4 @@ public class InicioView extends BaseActivity<InicioPresenter> implements Inicio 
         viewPager.setAdapter(vpAdapter);
     }
 
-    @Override
-    public void mostrarInicio() {
-
-    }
-
-    @Override
-    public void ocultarInicio() {
-
-    }
-
-    @Override
-    public void mostrarTabMenu() {
-
-    }
-
-    @Override
-    public void ocultarTabMenu() {
-
-    }
-
-    @Override
-    public void mostrarviewPager() {
-
-    }
-
-    @Override
-    public void ocultarViewPager() {
-
-    }
 }

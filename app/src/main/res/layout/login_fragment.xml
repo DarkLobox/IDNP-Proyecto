@@ -48,8 +48,7 @@
         android:textColor="#E8E3E3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logPass"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/logPass" />
 
     <Button
         android:id="@+id/regButton"
@@ -62,8 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logButton"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/logButton" />
 
     <ImageView
         android:id="@+id/imageView2"
