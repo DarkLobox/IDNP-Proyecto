@@ -39,12 +39,12 @@ public class RutasView extends Fragment {
         databaseReference = firebaseDatabase.getReference();
 
         rutas = new ArrayList<Ruta>();
-        rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("5 de Octubre", "D", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("6 de Octubre", "A", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("7 de Octubre", "B", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("8 de Octubre", "D", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("5 de Octubre", "D", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("6 de Octubre", "A", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("7 de Octubre", "B", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("8 de Octubre", "D", "5:00 AM - 9:00 PM", false));
 
         databaseReference.child("Ruta").setValue(rutas);
 

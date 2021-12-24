@@ -39,9 +39,9 @@ public class FavoritosView extends Fragment {
         databaseReference = firebaseDatabase.getReference();
 
         rutas = new ArrayList<Ruta>();
-        rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM"));
-        rutas.add(new Ruta("5 de Octubre", "D", "5:00 AM - 9:00 PM"));
+        rutas.add(new Ruta("3 de Octubre", "A", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("4 de Octubre", "B", "5:00 AM - 9:00 PM", false));
+        rutas.add(new Ruta("5 de Octubre", "D", "5:00 AM - 9:00 PM", false));
 
         databaseReference.child("RutaFavorita").setValue(rutas);
         //Recupera el valor de InicioView para verificar invitado

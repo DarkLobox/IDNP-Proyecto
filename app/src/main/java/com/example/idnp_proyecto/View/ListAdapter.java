@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,7 +66,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView iconImage;
         TextView empresa,ruta,horario;
-        Button favorito;
+        ImageButton favorito;
 
         ViewHolder(View itemView){
             super(itemView);
@@ -92,6 +93,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                 public void onClick(View view) {
                     //Agregar o quitar de favoritos en bd
                     Toast.makeText(view.getContext(), item.getEmpresa(), Toast.LENGTH_SHORT).show();
+                    if(!item.getFavorito()){
+                        item.setFavorito(true);
+                        favorito.setImageResource(R.drawable.starblack);
+
+                    }
+                    else{
+                        item.setFavorito(false);
+                        favorito.setImageResource(R.drawable.starborder);
+                    }
                 }
             });
 

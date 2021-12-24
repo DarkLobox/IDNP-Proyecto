@@ -6,12 +6,22 @@ public class Ruta implements Serializable {
     public String empresa;
     public String letraRuta;
     public String horario;
+    public boolean favorito;
 
-    public Ruta(String empresa,String letraRuta,String horario){
+    public Ruta(String empresa,String letraRuta,String horario, boolean favorito){
         this.empresa = empresa;
         this.letraRuta = letraRuta;
         this.horario = horario;
+        this.favorito = favorito;
     }
+    public boolean getFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
+    }
+
     public String getEmpresa() {
         return empresa;
     }

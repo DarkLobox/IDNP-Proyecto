@@ -143,7 +143,6 @@ public class LoginView extends Fragment implements Login {
         databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-
                 int i=1;
                 while(i<=Usuario.cantidad){
                     uCorreo= task.getResult().child(i+"/correo").getValue().toString();
@@ -154,7 +153,6 @@ public class LoginView extends Fragment implements Login {
                     }
                     i++;
                 }
-
             }
         });
 
