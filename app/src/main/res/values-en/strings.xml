@@ -14,4 +14,5 @@
     <string name="textAll">All</string>
     <string name="textFavorites">Favorites</string>
     <string name="textNear">Nearby</string>
+    <string name="botonCalendar"> Calendar</string>
 </resources>
