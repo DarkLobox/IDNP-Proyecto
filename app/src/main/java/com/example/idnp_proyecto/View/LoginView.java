@@ -44,7 +44,7 @@ public class LoginView extends Fragment implements Login {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    boolean invitado, ingresar;
+    boolean invitado = true, ingresar = false;
     @Override
     public void onAttach(@NonNull Context context) {
         sharedPreferences = context.getSharedPreferences("userFile",Context.MODE_PRIVATE);

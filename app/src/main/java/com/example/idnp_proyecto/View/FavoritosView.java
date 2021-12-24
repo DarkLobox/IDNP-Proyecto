@@ -44,14 +44,14 @@ public class FavoritosView extends Fragment {
                 public void onItemClick(Ruta item) {
                     moveToDescription(item);
                 }
-            });
+            }, invitado);
         }else{
             listAdapter = new ListAdapter(rutas, getContext(), new ListAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(Ruta item) {
                     Toast.makeText(rootView.getContext(), "Esta version es incompatible con esa funcion", Toast.LENGTH_SHORT).show();
                 }
-            });
+            }, invitado);
         }
 
         recyclerView.setAdapter(listAdapter);

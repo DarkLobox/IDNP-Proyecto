@@ -19,7 +19,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     private List<Ruta> mRutas;
     private LayoutInflater mInflater;
     private Context context;
-    private boolean invitado;
+    private boolean invitado = true;
     final ListAdapter.OnItemClickListener listener;
 
     public  interface OnItemClickListener{
