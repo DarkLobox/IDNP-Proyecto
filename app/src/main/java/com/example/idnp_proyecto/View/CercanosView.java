@@ -2,13 +2,23 @@ package com.example.idnp_proyecto.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.idnp_proyecto.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,13 +33,17 @@ import com.google.android.gms.maps.model.RoundCap;
 
 public class CercanosView extends Fragment {
 
+    private LocationManager lm;
+    public Location lastLocation;
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         @Override
         public void onMapReady(GoogleMap googleMap) {
-
+            obtainCoordinates();
             createMarker(googleMap);
             createPolylines(googleMap);
+
         }
     };
 
@@ -51,11 +65,13 @@ public class CercanosView extends Fragment {
         }
     }
     private final void createMarker(GoogleMap googleMap) {
-        LatLng coordinates = new LatLng(-16.422089710019176D, -71.54356956481934D);
-        MarkerOptions marker = (new MarkerOptions()).position(coordinates).title("Ruta 01");
-        googleMap.addMarker(marker);
-        googleMap.animateCamera(
-                CameraUpdateFactory.newLatLngZoom(coordinates, 15.0F), 2000, null);
+        if(lastLocation!=null){
+            LatLng coordinates = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
+            MarkerOptions marker = (new MarkerOptions()).position(coordinates).title("Tu Ubicación");
+            googleMap.addMarker(marker);
+            //googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates,15.0f));
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 15.0F), 4000, null);
+        }
     }
 
     private final void createPolylines(GoogleMap googleMap) {
@@ -77,6 +93,22 @@ public class CercanosView extends Fragment {
 
         polyline.setStartCap(new RoundCap());
         polyline.setEndCap(new RoundCap());
+    }
+
+    private void obtainCoordinates(){
+        if (ActivityCompat.checkSelfPermission(getContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        Location loc = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+        if (loc != null) {
+            Toast.makeText(getContext(), loc.getLatitude() + "\n " + loc.getLongitude(), Toast.LENGTH_SHORT).show();
+            lastLocation = loc;
+        }
     }
 
 }
