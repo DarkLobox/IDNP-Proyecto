@@ -22,6 +22,7 @@ public class CalendarioView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.calendario_fragment, container, false);
+
         return rootview;
     }
 

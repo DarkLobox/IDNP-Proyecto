@@ -23,9 +23,9 @@ public class ViewBarChart extends View {
     private int paddingLeft = 80;
     private int paddingButton = 100;
 
-    private int tamañoLetra = 15;
+    private int tamañoLetra = 30;
     private int tamañoIntervalos = 10;
-    private String titulo = "Grafico de Barras";
+    private String titulo = "";
 
     private List<String> datosHorizontales = new ArrayList<String>();
     private List<Integer> datosVerticales = new ArrayList<Integer>();
@@ -100,7 +100,7 @@ public class ViewBarChart extends View {
     void configurarPaint() {
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.rgb(230, 59, 28));
         paint.setTextSize(tamañoLetra);
         paint.setTextAlign(Paint.Align.CENTER);
 

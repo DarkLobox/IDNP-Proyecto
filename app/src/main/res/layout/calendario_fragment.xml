@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".View.CalendarioView">
 
     <CalendarView
         android:id="@+id/calendarView2"
-        android:layout_width="match_parent"
-        android:layout_height="348dp" />
+        android:layout_width="367dp"
+        android:layout_height="348dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
+
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/bordes_blancos" />
 </FrameLayout>
