@@ -59,7 +59,7 @@ public class RutasView extends Fragment {
     }
 
     public  void moveToDescription(Ruta item){
-        Intent intent = new Intent(getContext(),DescriptionActivity.class);
+        Intent intent = new Intent(getContext(), DescriptionView.class);
         intent.putExtra("Ruta",item);
         startActivity(intent);
     }

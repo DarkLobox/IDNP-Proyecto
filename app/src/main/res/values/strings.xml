@@ -13,4 +13,5 @@
     <string name="textAll">Todas</string>
     <string name="textFavorites">Favoritas</string>
     <string name="textNear">Cercanas</string>
+    <string name="title_activity_description2">Description2Activity</string>
 </resources>
