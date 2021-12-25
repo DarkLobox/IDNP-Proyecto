@@ -17,7 +17,6 @@ import com.example.idnp_proyecto.Adaptadores.VPAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class InicioView extends BaseActivity<InicioPresenter> implements Inicio {
-
     private TabLayout tabMenu;
     private ViewPager viewPager;
     protected  InicioPresenter createPresenter(@NonNull Context context){
@@ -30,7 +29,6 @@ public class InicioView extends BaseActivity<InicioPresenter> implements Inicio 
 
         tabMenu = findViewById(R.id.tabMenu);
         viewPager = findViewById(R.id.viewPager);
-
         tabMenu.setupWithViewPager(viewPager);
 
         //Recupera el bool invitado
@@ -47,7 +45,6 @@ public class InicioView extends BaseActivity<InicioPresenter> implements Inicio 
         vpAdapter.addFragment(new CalendarioView(),getResources().getString(R.string.botonCalendar));
         vpAdapter.addFragment(new ContactosView(),"Contacto");
         viewPager.setAdapter(vpAdapter);
-
     }
 
     @Override

@@ -37,5 +37,4 @@ public class GraficoView extends Fragment {
         return rootview;
     }
 
-
 }

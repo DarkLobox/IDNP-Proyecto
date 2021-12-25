@@ -81,6 +81,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             empresa.setText(item.getEmpresa());
             ruta.setText(item.getLetraRuta());
             horario.setText(item.getHorario());
+            if(item.getFavorito()){
+                favorito.setImageResource(R.drawable.starblack);
+            }
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -96,7 +99,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                     if(!item.getFavorito()){
                         item.setFavorito(true);
                         favorito.setImageResource(R.drawable.starblack);
-
                     }
                     else{
                         item.setFavorito(false);
